@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Info</title>
+</head>
+<body>
+        <h1>User {{user_id}}</h1>
+        <a href="/">Home</a>
+        <table>
+                {{one_user.id}}
+                <p>First Name:{{one_user.first_name}}</p>
+                <p>Last Name:{{one_user.last_name}}</p>
+                <p>Email:{{one_user.email}}</p>
+                <p>Created at:{{one_user.created_at}}</p>
+                <p>Updated at:{{one_user.updated_at}}</p>
+    </table>
+
+    <h2>Edit User:</h2>
+    <form action = /users/{{one_user.id}}/edit method = 'POST'>
+        First Name: <input type='text' name = 'first_name'><br>
+        Last Name: <input type='text' name = 'last_name'><br>
+        Email: <input type='text' name = 'email'><br>
+        <input type ='submit'>
+    </form>
+
+    <a href="/users/{{one_user.id}}/edit">Edit</a>
+</body>
+</html>
+

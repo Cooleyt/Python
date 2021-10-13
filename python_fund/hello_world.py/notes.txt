@@ -1,0 +1,42 @@
+# print('Hello world!')
+
+# z = True
+# x = False  #capitalize T and F for true and false statements 
+# h = None   #null 
+
+# no var for variables. 
+
+#f-string is a formatted string
+
+# first_name = 'Tabi'
+# last_name = 'Cooley'
+
+# print(f'my name is {first_name} {last_name}!')
+
+#3 types of dictionaries in python:
+#--------------------------------------
+#list an array that allows you to hold groups of values. uses [] brackets
+
+#tuples an immutable list cannot be changed in anyway -  we don't use this much. uses () parentheses. they get accidentally  made. 
+
+#dictionaries - an unordered collection of objects enclosed by {}  brackets
+
+# x = 7
+
+# if (x ==7):
+#     print('x is seven!')
+
+# else:
+#     print('x is not seven') #the 4 indents is very important. all indents should be the same multiple. be consistent
+
+
+#loops
+
+# for x in range (0, 11):
+#     print(x) #this will print 1-10
+
+
+number_list = [8, 12, 7, 4, 59, 71]
+
+for number in number_list:
+    print(number)

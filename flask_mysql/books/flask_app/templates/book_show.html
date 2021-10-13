@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+</head>
+<body>
+    <h1>Title{{book.title}}</h1>
+    <h2>Favorited by:{{author.id}}</h2>
+    <form action='/author/create' method='POST'>
+        {% for authors in book.authors %}
+        <p>{{author.name}}</p>
+        {% endfor %}
+    </form>
+
+    <table>
+            <h1>All Books</h1>
+            <ul>
+            {% for book in books %}
+                <li><a href="books/{{authors.id}}">{{book.id}} {{books.title}}</a></li>
+            {% endfor %}
+            </ul>
+    </table>
+
+    <a href='/authors'>Home</a>
+</body>
+</html>

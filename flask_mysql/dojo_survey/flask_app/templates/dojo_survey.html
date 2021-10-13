@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+</head>
+<body>
+    <h1>Dojo Survey</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+    <form action='/create' method='POST'>
+        Name: <input type='text' name='name'><br>
+        Location:
+        <select name="location" class="dropdown">
+            <option value="Online">Online</option>
+            <option value="San Francisco">San Francisco</option>
+            <option value="Chicago, IL">Chicago, IL</option>
+            <option value="New York, NY">New York, NY</option>
+            <option value="Arlington, VA">Arlington, VA</option>
+        </select><br>
+        Favorite Language:
+        <select name="language" class="dropdown">
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="Javascript">Javascript</option>
+            <option value="Python">Python</option>
+            <option value="Mern">Mern</option>
+            <option value="Ruby">Ruby</option>
+        </select><br>
+        Comments(optional): <input class = 'textarea' type='textarea' name='comments'></br>
+        <input type='submit'>
+    </form>
+</body>
+</html>

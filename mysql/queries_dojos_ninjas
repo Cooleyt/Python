@@ -1,0 +1,40 @@
+INSERT INTO dojos (name)
+VALUES ('CLT Dojo'), ('Frank Dojo' ), ('Jewish Dojo');
+
+SELECT * FROM dojos_and_ninjas_schema.dojos;
+
+DELETE FROM dojos WHERE id = 1;
+
+SELECT * FROM dojos_and_ninjas_schema.dojos;
+
+DELETE FROM dojos WHERE id = 2;
+
+SELECT * FROM dojos_and_ninjas_schema.dojos;
+
+DELETE FROM dojos WHERE id = 3;
+
+SELECT * FROM dojos_and_ninjas_schema.dojos;
+
+INSERT INTO dojos (name)
+VALUES ('Green Dojo'), ('Yellow Dojo' ), ('Red Dojo');
+
+SELECT * FROM dojos_and_ninjas_schema.dojos;
+
+INSERT INTO ninjas (first_name, last_name, age, dojos_id)
+VALUES ('Tabi', 'Cooley', 29, 4), ('Yomi', 'Frank', 2, 4), ('Tre', 'Frank', 2, 4);
+
+SELECT * FROM dojos_and_ninjas_schema.dojos;
+
+INSERT INTO ninjas (first_name, last_name, age, dojos_id)
+VALUES ('John', 'Dale', 49, 5), ('Hiyashi', 'Natsumi', 35, 5), ('Ophelia', 'Earnhart', 78, 5);
+
+INSERT INTO ninjas (first_name, last_name, age, dojos_id)
+VALUES ('Tammy', 'Capps', 34, 6), ('Ryan', 'Ray', 46, 6), ('Joe', 'Smith', 24, 6);
+
+SELECT * FROM ninjas 
+WHERE dojos_id = 4;
+
+SELECT * FROM ninjas 
+WHERE dojos_id = 6;
+
+SELECT * FROM ninjas JOIN dojos ON ninjas.dojos_id = dojos.id WHERE ninjas.id = 11

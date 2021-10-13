@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USERS</title>
+</head>
+
+<style>
+    table, th {
+    border: 1px solid black;
+}
+</style>
+<body>
+    <h1>All My Users</h1>
+    <table>
+        <thead>
+            <tr>
+                <th><p>ID:</p></th>
+            <th><p>First Name:</p></th>
+            <th><p>Last Name:</p></th>
+            <th><p>Email:</p></th>
+            <th><p>Actions:</p></th>
+            </tr>
+        </thead>
+        
+        {% for one_user in users %}
+        <tr>
+            <td>{{one_user.id}}</td>
+            <td>{{one_user.first_name}}</td>
+            <td>{{one_user.last_name}}</td>
+            <td>{{one_user.email}}</td>
+            <td>
+                <a href="/users/{{one_user.id}}/userinfo">Show</a>
+                <a href="/users/{{one_user.id}}/edit">Edit</a>
+                <a href="/users/{{one_user.id}}/delete">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h1>Add a New User</h1>
+    <form action ='/users/create' method = 'POST'>
+        First Name: <input type='text' name = 'first_name'><br>
+        Last Name: <input type='text' name = 'last_name'><br>
+        Email: <input type='text' name = 'email'><br>
+        <input type='submit' a href="/users/{{user_id}}}/userinfo"></a>
+    </form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodingDojo Wall</title>
+</head>
+<body>
+    <h1>Welcome, {{session['first_name']}}!</h1>
+        {% for user in users %}
+            <p>You have new messages</p>
+            <p>Message: {{users}}</p>
+            <!-- <a href = "delete_message/{{user.id}}" <img src="{{url_for('static', filename='delete_img.png')}}"></a> -->
+            <p>Message: {{users}}</p>
+            <p>Message: {{users}}</p>
+        {% endfor %}
+
+
+
+        
+            <p>Send a message</p>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+                <form action="/create/message" method = 'POST'>
+                    New Message:<textarea name='description'></textarea><br>
+
+                    <input type = "submit">   
+                </form>
+            <input type='submit'>
+
+        <a href="/users/logout">Log Out</a>
+</body>
+</html>

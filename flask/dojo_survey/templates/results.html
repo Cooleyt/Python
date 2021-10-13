@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p class="resultHeader">Submitted Info</p>
+        <div class="topBox2">
+            <div class="bars2">
+                <p>Your Name: {{session['first_name']}}</p>
+            </div>
+            <div class="bars2">
+                <p>Dojo Location: {{session['dojo_location']}}</p>
+            </div>
+            <div class="bars2">
+                <p>Favorite Language: {{session['favorite_language']}}</p>
+            </div>
+            <div class="bars2">
+                <p>Comment: {{session['comments']}}</p>
+            </div>
+            <div class="submitBtn2">
+                <form action="/destroy_session">
+                    <input type="submit" value="Go Back">
+                </form>
+            </div>
+        </div>
+</body>
+</html>
